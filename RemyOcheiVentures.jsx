@@ -9,6 +9,7 @@ const TITLES = [
 ];
 
 const LIVE_PROJECTS = [
+  { name: "Claude Cursor", url: "https://claudecursor.com", desc: "Desktop app to rerank, notify & remote-control Claude Code sessions", icon: "🧭" },
   { name: "Epsteinalysis", url: "https://epsteinalysis.com", desc: "Deep investigative data analysis", icon: "🔍" },
   { name: "Elonalysis", url: "https://elonalysis.com", desc: "Tech mogul analytics & insights", icon: "📊" },
   { name: "SparkSeekr", url: "https://sparkseekr.com", desc: "Discover your next spark", icon: "✨" },
