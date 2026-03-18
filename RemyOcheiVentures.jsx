@@ -27,10 +27,10 @@ const COMING_SOON = [
 ];
 
 const TRAVEL_PAL_SUBS = [
-  { name: "PhantomNav", url: "https://phantomnav.vercel.app/", domain: "PhantomNav.TravelPal.ai", desc: "Ghost-mode navigation" },
-  { name: "FlavorAtlas", url: "https://flavoratlas.vercel.app/", domain: "FlavorAtlas.TravelPal.ai", desc: "Global cuisine mapping" },
-  { name: "QuestLog", url: "https://questlog-git-main-remy-ocheis-projects.vercel.app/#theme=genshin", domain: "QuestLog.TravelPal.ai", desc: "Gamified travel journal" },
-  { name: "Agent", url: "https://travelpal-agent-production.up.railway.app/", domain: "Agent.TravelPal.ai", desc: "AI travel agent" },
+  { name: "FlavorAtlas", url: "https://www.flavoratlas.travelpal.ai/", domain: "FlavorAtlas.TravelPal.ai", desc: "Global cuisine mapping" },
+  { name: "PhantomNav", url: "https://www.phantomnav.travelpal.ai/", domain: "PhantomNav.TravelPal.ai", desc: "Ghost-mode navigation" },
+  { name: "QuestLog", url: "https://www.questlog.travelpal.ai/", domain: "QuestLog.TravelPal.ai", desc: "Gamified travel journal" },
+  { name: "Agent", url: "https://www.agent.travelpal.ai/", domain: "Agent.TravelPal.ai", desc: "AI travel agent" },
 ];
 
 /* ─── tiny star canvas ─── */
@@ -298,7 +298,7 @@ function TravelPalCard() {
               color: "rgba(184,212,227,0.7)", border: "1px solid rgba(184,212,227,0.2)",
               padding: "2px 10px", borderRadius: "20px",
               fontFamily: "'DM Sans', sans-serif",
-            }}>SUITE • SOON</span>
+            }}>SUITE • LIVE</span>
           </div>
           <p style={{
             margin: 0, fontSize: "13px", color: "rgba(255,220,180,0.5)",
@@ -534,7 +534,11 @@ export default function RemyOcheiVentures() {
             <FlameDivider />
             <SectionLabel>The Rites — Live Ventures</SectionLabel>
             <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-              {LIVE_PROJECTS.map((p) => (
+              {LIVE_PROJECTS.slice(0, 1).map((p) => (
+                <ProjectCard key={p.name} project={p} isLive />
+              ))}
+              <TravelPalCard />
+              {LIVE_PROJECTS.slice(1).map((p) => (
                 <ProjectCard key={p.name} project={p} isLive />
               ))}
             </div>
@@ -549,7 +553,6 @@ export default function RemyOcheiVentures() {
             <FlameDivider />
             <SectionLabel glow="rgba(160,100,200,0.8)">The Beyonder — Coming Soon</SectionLabel>
             <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-              <TravelPalCard />
               {COMING_SOON.map((p) => (
                 <ProjectCard key={p.name} project={p} isLive={false} />
               ))}
