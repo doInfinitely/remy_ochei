@@ -10,6 +10,7 @@ const TITLES = [
 
 const LIVE_PROJECTS = [
   { name: "Claude Cursor", url: "https://claudecursor.com", desc: "Desktop app to rerank, notify & remote-control Claude Code sessions", icon: "🧭" },
+  { name: "Rho-Bot", url: "https://rho-bot.net", desc: "Next-gen bot framework", icon: "🤖" },
   { name: "Epsteinalysis", url: "https://epsteinalysis.com", desc: "Deep investigative data analysis", icon: "🔍" },
   { name: "Elonalysis", url: "https://elonalysis.com", desc: "Tech mogul analytics & insights", icon: "📊" },
   { name: "SparkSeekr", url: "https://sparkseekr.com", desc: "Discover your next spark", icon: "✨" },
@@ -21,7 +22,6 @@ const LIVE_PROJECTS = [
 
 const COMING_SOON = [
   { name: "Tiny OCR", url: "https://tiny-ocr.com", desc: "Lightweight optical character recognition", icon: "👁" },
-  { name: "Rho-Bot", url: "https://rho-bot.net", desc: "Next-gen bot framework", icon: "🤖" },
   { name: "Black Ringo", url: "https://black-ringo.com", desc: "Coming soon", icon: "🎯" },
   { name: "CloudRun Shop", url: "https://cloudrun.shop", desc: "Cloud deployment marketplace", icon: "☁️" },
 ];
@@ -538,7 +538,10 @@ export default function RemyOcheiVentures() {
                 <ProjectCard key={p.name} project={p} isLive />
               ))}
               <TravelPalCard />
-              {LIVE_PROJECTS.slice(1).map((p) => (
+              {LIVE_PROJECTS.slice(1, 2).map((p) => (
+                <ProjectCard key={p.name} project={p} isLive />
+              ))}
+              {LIVE_PROJECTS.slice(2).map((p) => (
                 <ProjectCard key={p.name} project={p} isLive />
               ))}
             </div>
